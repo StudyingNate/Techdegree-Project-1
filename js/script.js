@@ -61,7 +61,9 @@ const getRandomQuote = () => {
 /***
  * `printQuote` function
 ***/
-
+const printQuote = () = > {
+  
+}
 
 
 /***
