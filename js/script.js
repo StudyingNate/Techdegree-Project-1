@@ -10,41 +10,42 @@ project 1 - A Random Quote Generator
 /*** 
  * `quotes` array 
 ***/
+let randomNumber;
 var quotes = [
   {
-    quote: 'Macintosh',
-    source: 'Red'
-    citation:
-    year:
-    tags:
+    quote: "The world isn’t perfect. But it’s there for us, doing the best it can… that’s what makes it so damn beautiful.",
+    source: "Full Metal Alchemist",
+    citation: "Roy Mustang",
+    year: 4321,
+    tags: "anime",
+  },
+  {
+    quote: "If you don’t take risks, you can’t create a future!",
+    source: 'One Piece',
+    citation: "Monkey D. Luffy",
+    year: 1234,
+    tags: "Anime"
+  },
+  {
+    quote: "“People, who can’t throw something important away, can never hope to change anything.”",
+    source: '(Shingeki no Kyojin / Attack on Titan)',
+    citation: " — Armin Arlert ",
+    year: 1234,
+    tags: "anime"
   },
   {
     quote: 'Macintosh',
-    source: 'Red'
-    citation:
-    year:
-    tags:
+    source: 'Red',
+    citation: "ME my",
+    year: 1234,
+    tags: "anime"
   },
   {
     quote: 'Macintosh',
-    source: 'Red'
-    citation:
-    year:
-    tags:
-  },
-  {
-    quote: 'Macintosh',
-    source: 'Red'
-    citation:
-    year:
-    tags:
-  },
-  {
-    quote: 'Macintosh',
-    source: 'Red'
-    citation:
-    year:
-    tags:
+    source: 'Red',
+    citation: "yahallo",
+    year: 1234,
+    tags: "anime"
   }
 ];
 
@@ -52,17 +53,18 @@ var quotes = [
 /***
  * `getRandomQuote` function
 ***/
-const getRandomQuote = () => {
+const getRandomQuote = (arr) => {
+  let randomNumber = Math.floor(Math.random() * arr.length);
+  return quotes[randomNumber];
 
-  return qoute[i]
 }
+
 
 
 /***
  * `printQuote` function
 ***/
-const printQuote = () = > {
-  
+const printQuote = () => {
 }
 
 
