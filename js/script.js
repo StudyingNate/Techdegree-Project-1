@@ -10,41 +10,40 @@ project 1 - A Random Quote Generator
 /*** 
  * `quotes` array 
 ***/
-let randomNumber;
 var quotes = [
   {
     quote: "The world isn’t perfect. But it’s there for us, doing the best it can… that’s what makes it so damn beautiful.",
     source: "Full Metal Alchemist",
     citation: "Roy Mustang",
-    year: 4321,
+    year: 2003,
     tags: "anime",
   },
   {
     quote: "If you don’t take risks, you can’t create a future!",
-    source: 'One Piece',
+    source: "One Piece",
     citation: "Monkey D. Luffy",
-    year: 1234,
-    tags: "Anime"
+    year: 1999,
+    tags: ""
   },
   {
-    quote: "“People, who can’t throw something important away, can never hope to change anything.”",
+    quote: "People, who can’t throw something important away, can never hope to change anything.",
     source: '(Shingeki no Kyojin / Attack on Titan)',
-    citation: " — Armin Arlert ",
-    year: 1234,
+    citation: "Armin Arlert ",
+    year: 2013,
     tags: "anime"
   },
   {
-    quote: 'Macintosh',
-    source: 'Red',
-    citation: "ME my",
-    year: 1234,
+    quote: "If nobody cares to accept you and wants you in this world, accept yourself and you will see that you don’t need them and their selfish ideas.",
+    source: "Magi",
+    citation: "Alibaba Saluja",
+    year: 2012,
     tags: "anime"
   },
   {
-    quote: 'Macintosh',
-    source: 'Red',
-    citation: "yahallo",
-    year: 1234,
+    quote: "Who decides limits? And based on what? You said you worked hard? Well, maybe you need to work a little harder. Is that really the limit of your strength? Could you of tomorrow beat you today? Instead of giving in, move forward.",
+    source: "One Punch Man",
+    citation: "Saitama ",
+    year: 2015,
     tags: "anime"
   }
 ];
@@ -60,20 +59,19 @@ let randomNumber = Math.floor(Math.random() * arr.length);
 }
 
 
-
 /***
  * `printQuote` function
 ***/
 const printQuote = () => {
-  let animeQuote = getRandomQuote;
+  let animeQuote = getRandomQuote(quotes);
   let html = `
   <p class="quote"> ${animeQuote.quote} </p>
   <p class="source"> ${animeQuote.source} `;
 
-  if (quotes.citation) {
+  if (animeQuote.citation) {
   html += `<span class="citation"> ${animeQuote.citation} </span>`
   }
-  if (quotes.year){
+  if (animeQuote.year){
   html += `<span class="year"> ${animeQuote.year} </span>` 
   }
 
@@ -82,6 +80,7 @@ const printQuote = () => {
   document.getElementById('quote-box').innerHTML = html; 
 
 }
+
 
 
 /***
