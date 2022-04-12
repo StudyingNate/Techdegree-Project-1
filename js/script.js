@@ -65,15 +65,16 @@ let randomNumber = Math.floor(Math.random() * arr.length);
  * `printQuote` function
 ***/
 const printQuote = () => {
+  let animeQuote = getRandomQuote;
   let html = `
-  <p class="quote"> ${getRandomQuote.quote} </p>
-  <p class="source"> ${getRandomQuote.source} `;
+  <p class="quote"> ${animeQuote.quote} </p>
+  <p class="source"> ${animeQuote.source} `;
 
   if (quotes.citation) {
-  html += `<span class="citation"> ${getRandomQuote.citation} </span>`
+  html += `<span class="citation"> ${animeQuote.citation} </span>`
   }
   if (quotes.year){
-  html += `<span class="year"> ${getRandomQuote.year} </span>` 
+  html += `<span class="year"> ${animeQuote.year} </span>` 
   }
 
   html += `</p>`;
