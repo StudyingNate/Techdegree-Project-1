@@ -82,9 +82,10 @@ const printQuote = () => {
   }
 
   html += `<span class="tags"> ${animeQuote.tags} </span></p>`;
-  
-  document.getElementById('quote-box').innerHTML = html; 
+
   document.body.style.backgroundColor = randomRGB();
+  document.getElementById('quote-box').innerHTML = html; 
+
 
 }
 
@@ -95,22 +96,12 @@ const printQuote = () => {
 ***/
 const randomColor = () => Math.floor(Math.random() * 256);
 
-let randomRGB = () => {
+function randomRGB() {
   const color = `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`;
   return color;
 }
 
-/***
- * `changeQoute` function
- * Created a brand new function that gathers 'printQuote' and 'randomRGB' to be called in 'setInterval'
- * Both qoute and the background color will be changed during the 20 second interval.
-***/
-const changeQuote = () => {
-printQuote();
-randomRGB();
-}
-
-setInterval(changeQuote(), 20000);
+setInterval(printQuote, 15000);
 
 
 /***
