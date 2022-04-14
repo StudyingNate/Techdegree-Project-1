@@ -56,8 +56,8 @@ const getRandomQuote = (arr) => {
 
 /***
  * `printQuote` function
- * Creates the HTML quote structure using Object Literals and while assigning it a background color.
- * If statements to check if quote has a citation or year to add to the quote structure.
+ * Creates the HTML quote structure using Object Literals while assigning it a background color.
+ * If statements will check if quote has a citation or year to add to the quote structure.
  ***/
 const printQuote = () => {
 	let animeQuote = getRandomQuote(quotes);
@@ -75,7 +75,7 @@ const printQuote = () => {
 	html += `<span class="tags"> ${animeQuote.tags} </span></p>`; //Ends the html quote structure with </p> tag and adds a new span tag called "tags"
 
 	document.body.style.backgroundColor = randomRGB(); // Sets the background color of the webpage.
-	document.getElementById('quote-box').innerHTML = html; //
+	document.getElementById('quote-box').innerHTML = html; 
 	timerReset(); // Calls the 'timerReset' function whenever 'printQuote' is executed. 
 };
 
