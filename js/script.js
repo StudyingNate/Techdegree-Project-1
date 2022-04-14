@@ -23,7 +23,6 @@ project 1 - A Random Quote Generator
 	citation: "", //Tests the if statement in 'printQuote' will display the citation if left blank.
 	year: 1999,
 	tags: `#anime #motivational`
-
 }, {
 	quote: "People, who can’t throw something important away, can never hope to change anything.",
 	source: "Armin Arlert",
@@ -36,7 +35,6 @@ project 1 - A Random Quote Generator
 	citation: "Magi",
 	year: "", //Tests the if statement in 'printQuote' will display the year if left blank.
 	tags: `#anime #fantasy`
-
 }, {
 	quote: "Who decides limits? And based on what? You said you worked hard? Well, maybe you need to work a little harder. Is that really the limit of your strength? Could you of tomorrow beat you today? Instead of giving in, move forward.",
 	source: "Saitama",
@@ -53,7 +51,6 @@ project 1 - A Random Quote Generator
 const getRandomQuote = (arr) => {
 	let randomNumber = Math.floor(Math.random() * arr.length);
 	return quotes[randomNumber];
-
 };
 
 
@@ -77,8 +74,9 @@ const printQuote = () => {
 
 	html += `<span class="tags"> ${animeQuote.tags} </span></p>`; //Ends the html quote structure with </p> tag and adds a new span tag called "tags"
 
-	document.body.style.backgroundColor = randomRGB();
-	document.getElementById('quote-box').innerHTML = html;
+	document.body.style.backgroundColor = randomRGB(); // Sets the background color of the webpage.
+	document.getElementById('quote-box').innerHTML = html; //
+	timerReset(); // Calls the 'timerReset' function whenever 'printQuote' is executed. 
 };
 
 
@@ -96,22 +94,17 @@ const randomRGB = () => {
 
 /***
  * `timerReset` function
- * Resets the timer of the 'quotePrint when '
-
-* Creates a random number to be plugged into the randomRGB function to return a random color.
-***/
-const quoteInterval = setInterval(printQuote, 15000);
-
-const timerReset = () => {
-	clearInterval(quoteInterval);
-  console.log("RESET");
+ * Resets the timer of the 'setInterval' of the printQuote function when the timer lapses using 'clearInterval'.
+ ***/
+let quoteInterval = setInterval(printQuote, 15000); // Assigned setInterval to the quoteIntveral variable.
+let timerReset = () => {
+	clearInterval(quoteInterval); // Completely stops interval.
+	quoteInterval = setInterval(printQuote, 15000); // Assigns interval a new timer.
 };
-
 
 
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
  ***/
-
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
